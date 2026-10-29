@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PulseBoard — Mini Social Media App
 
 ## Technologies
@@ -37,3 +38,7 @@ The `pulseboard-data.json` file is created automatically.
 
 ## Note
 This is a learning/demo app. JSON-file storage is suitable for a small local demo, not concurrent high-traffic production. Before public deployment, set a strong SESSION_SECRET, use HTTPS and secure cookies, add rate limiting and CSRF protections, and use a persistent production session store.
+=======
+# PulseBoard
+PulseBoard is a mini social media web app built with HTML, CSS, JavaScript, Node.js, Express.js, and JSON-file storage. It features user authentication, profiles, posts, likes, comments, and a follow system.
+>>>>>>> 43eaecb1fee0b75ae62dfb7bc4b14579f1d82872
