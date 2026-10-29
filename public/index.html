@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f5ff">
+  <title>PulseBoard — share your little wins</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">✳</span><span>pulse<span class="brand-light">board</span></span></a>
+      <p class="side-label">YOUR SPACE</p>
+      <button class="nav-item active" data-view="feed"><span>⌂</span> Home feed</button>
+      <button class="nav-item" data-view="discover"><span>⌕</span> Discover people</button>
+      <button class="nav-item" data-view="profile"><span>◉</span> My profile</button>
+      <div class="sidebar-note">
+        <span class="note-icon">✦</span>
+        <strong>Small things count.</strong>
+        <p>A place for ideas, progress, and the in-between moments.</p>
+      </div>
+      <div class="sidebar-user" id="sidebarUser">
+        <div class="avatar">✳</div><div><strong>Guest mode</strong><small>Join the conversation</small></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div><p class="eyebrow" id="eyebrow">YOUR DAILY DOSE OF GOOD</p><h1 id="pageTitle">The little things feed</h1></div>
+        <div class="top-actions"><span class="online-dot"></span><span class="top-status">A little corner of the internet</span><button id="authButton" class="button button-dark">Log in</button></div>
+      </header>
+
+      <section id="authPanel" class="auth-panel hidden">
+        <div class="auth-copy"><span class="big-spark">✳</span><h2>Make this space yours.</h2><p>Join PulseBoard to post updates, cheer people on, and find your kind of people.</p></div>
+        <div class="auth-forms">
+          <div class="auth-tabs"><button class="auth-tab selected" data-auth="login">Log in</button><button class="auth-tab" data-auth="register">Create account</button></div>
+          <form id="authForm">
+            <div id="nameField" class="hidden"><label for="name">Your name</label><input id="name" name="name" placeholder="e.g. Aanya"></div>
+            <label for="username">Username</label><input id="username" name="username" placeholder="e.g. aanya_notes" required>
+            <label for="password">Password</label><input id="password" name="password" type="password" placeholder="At least 6 characters" required>
+            <button class="button button-purple full-width" type="submit" id="authSubmit">Log in →</button>
+            <p id="authMessage" class="form-message"></p>
+          </form>
+        </div>
+      </section>
+
+      <section id="composer" class="composer card hidden">
+        <div class="composer-heading"><div class="avatar" id="composerAvatar">✳</div><div><strong>What’s on your mind?</strong><p>Big win, tiny thought, or a work-in-progress.</p></div></div>
+        <form id="postForm">
+          <textarea id="postContent" maxlength="500" placeholder="Today I learned, noticed, tried, or loved…" required></textarea>
+          <div class="composer-bottom"><div class="mood-picker"><span>Set the vibe</span><select id="postMood" aria-label="Post mood"><option value="🌱">🌱 Growing</option><option value="✨">✨ Little win</option><option value="🔥">🔥 On a roll</option><option value="💭">💭 Thinking</option><option value="🎯">🎯 Focus mode</option></select></div><span id="charCount">0 / 500</span><button class="button button-purple" type="submit">Share post ↗</button></div>
+          <p id="postMessage" class="form-message"></p>
+        </form>
+      </section>
+
+      <section id="discoverBanner" class="discover-banner card hidden"><div><span class="eyebrow">YOUR NEXT FAVOURITE ACCOUNT</span><h2>Good energy is better shared.</h2><p>Explore the people building, learning, and celebrating their own little wins.</p></div><span class="banner-art">✳</span></section>
+      <section id="profilePanel" class="profile-panel card hidden"></section>
+
+      <div class="feed-toolbar"><div><h2 id="feedHeading">Fresh from the community <span class="sparkle">✦</span></h2><p id="feedSubheading">Real people. Real progress. No perfect lives required.</p></div><button id="refreshButton" class="icon-button" title="Refresh feed">↻</button></div>
+      <div id="feed" class="feed"></div>
+      <div id="emptyState" class="empty-state hidden"><span>☁</span><h3>It’s quiet in here… for now.</h3><p>Be the first to add a little something to the feed.</p></div>
+      <footer>Made for the moments between the milestones <span>✳</span></footer>
+    </main>
+
+    <aside class="rightbar">
+      <div class="today-card card"><div class="today-top"><span class="eyebrow">A THOUGHT FOR TODAY</span><span>✦</span></div><p class="quote">“Progress is still progress, even when it’s quiet.”</p><small>YOUR FRIENDLY REMINDER</small><div class="quote-decoration">〰</div></div>
+      <div class="people-section"><div class="section-heading"><h3>People to know</h3><span>✳</span></div><p class="muted small">Find someone whose journey inspires you.</p><div id="peopleList" class="people-list"></div></div>
+      <div class="right-note"><span>✦</span><p>Kindness looks good on everyone. Leave a comment that makes someone’s day.</p></div>
+    </aside>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

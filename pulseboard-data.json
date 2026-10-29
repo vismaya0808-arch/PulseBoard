@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "sxmz",
+      "username": "ksmx",
+      "passwordHash": "$2a$10$Py8aYsGKjAAAaFX3DLzk9OKUCys1s6JoF7jRSzG6h7EIjK2TWDbva",
+      "bio": "Collecting little moments.",
+      "avatar": "✨",
+      "created_at": "2026-10-29T15:43:46.688Z"
+    }
+  ],
+  "posts": [],
+  "comments": [],
+  "likes": [],
+  "follows": [],
+  "nextUserId": 2,
+  "nextPostId": 1,
+  "nextCommentId": 1
+}
